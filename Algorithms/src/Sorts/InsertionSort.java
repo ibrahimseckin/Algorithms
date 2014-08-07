@@ -32,15 +32,6 @@ public class InsertionSort {
         }
     }
     
-    public static void main(String [] args){
-            List<Integer> mylist = new ArrayList<Integer>();
-            for(int i = 0; i < 10; i++)
-               mylist.add(i);
-            
-            insertionSort(mylist);
-            for(int i = 0; i < 10; i++)
-                System.out.println(mylist.get(i));
-    }
     
 }
 
