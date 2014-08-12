@@ -64,5 +64,54 @@ public class MergeSort {
             
             return numList;
         }
-    
+        
+        public static int[] mergeSort(int[] numArray){
+            if(numArray.length > 1){
+                int firstHalf = (numArray.length + 1) / 2;
+                //int secondHalf = numList.size() - firstHalf;
+                
+                int[] first = new int[firstHalf];
+                for(int i = 0; i < firstHalf; i++)
+                    first[i] = numArray[i];
+                
+                int[] second = new int[numArray.length - firstHalf];
+                for(int i = firstHalf; i < numArray.length; i++){
+                    second[i-firstHalf] = numArray[i];
+                }
+                
+                first = mergeSort(first);
+                second = mergeSort(second);
+                
+                int firstPtr = 0;
+                int secondPtr = 0;
+                int commonPtr = 0;
+                
+                while(firstPtr != first.length && secondPtr != second.length){
+                    if(first[firstPtr] <= second[secondPtr]){
+                        numArray[commonPtr] = first[firstPtr];
+                        commonPtr++;
+                        firstPtr++;
+                    }
+                    else{
+                        numArray[commonPtr] = second[secondPtr];
+                        commonPtr++;
+                        secondPtr++;
+                    }
+                }
+                
+                while(firstPtr != first.length){
+                        numArray[commonPtr] = first[firstPtr];
+                        commonPtr++;
+                        firstPtr++;
+                }
+                
+                while(secondPtr != second.length){
+                    numArray[commonPtr] = second[secondPtr];
+                        commonPtr++;
+                        secondPtr++;
+                    }
+                }
+                
+            return numArray;
+            }
 }
