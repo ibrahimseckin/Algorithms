@@ -26,55 +26,52 @@ public class QuickSort {
         
         int i = start;
         int k = end;
-        
-        if(end > start){
-            int pivot = numList.get((start+end)/2);
+        int pivot = numList.get((start+end)/2);
             
-            while(k > i){
+            while(i <= k){
                 
-                while(numList.get(i) <= pivot && i < k && i <= end)
+                while(numList.get(i) < pivot)
                     i++; //index of the first number that is greater from pivot in left part
-                while(numList.get(k) > pivot && k >= i && k >= start)
+                while(numList.get(k) > pivot)
                     k--;
-                if(k > i)
+                if(i <= k){
                     swap(numList,i,k);
+                    i++;
+                    k--;
+                }
             }
-            swap(numList , start , k);
-            
-            quickSort(numList,start,k-1);
-            quickSort(numList,k+1,end);
+            //swap(numList , start , k);
+            if(start < k)
+                quickSort(numList,start,k);
+            if(i < end)
+                quickSort(numList,i,end);
         }
-        else{
-            return;
-        }
-    }
+
     
     public void quickSort(int[] numArray , int start, int end){
         
         int i = start;
         int k = end;
-        
-        if(end > start){
-            int pivot = numArray[(start+end)/2];
+        int pivot = numArray[(start+end)/2];
             
-            while(k > i){
+            while(i <= k){
                 
-                while(numArray[i] <= pivot && i < k && i <= end)
+                while(numArray[i] < pivot)
                     i++; //index of the first number that is greater from pivot in left part
-                while(numArray[k] > pivot && k >= i && k >= start)
+                while(numArray[k] > pivot)
                     k--;
-                if(k > i)
+                if(i <= k){
                     swap(numArray,i,k);
+                    i++;
+                    k--;
+                }
             }
-            swap(numArray , start , k);
-            
-            quickSort(numArray,start,k-1);
-            quickSort(numArray,k+1,end);
+            if(start < k)
+                quickSort(numArray,start,k);
+            if(i < end)
+                quickSort(numArray,i,end);
         }
-        else{
-            return;
-        }
-    }
+
     
     public void swap(List<Integer> numList , int first , int second){
         
