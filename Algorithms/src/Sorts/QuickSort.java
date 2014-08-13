@@ -27,7 +27,8 @@ public class QuickSort {
         int i = start;
         int k = end;
         int pivot = numList.get((start+end)/2);
-            
+        Swap s = new Swap();
+        
             while(i <= k){
                 
                 while(numList.get(i) < pivot)
@@ -35,7 +36,7 @@ public class QuickSort {
                 while(numList.get(k) > pivot)
                     k--;
                 if(i <= k){
-                    swap(numList,i,k);
+                    s.swap(numList,i,k);
                     i++;
                     k--;
                 }
@@ -53,7 +54,8 @@ public class QuickSort {
         int i = start;
         int k = end;
         int pivot = numArray[(start+end)/2];
-            
+        Swap s = new Swap();
+        
             while(i <= k){
                 
                 while(numArray[i] < pivot)
@@ -61,7 +63,7 @@ public class QuickSort {
                 while(numArray[k] > pivot)
                     k--;
                 if(i <= k){
-                    swap(numArray,i,k);
+                    s.swap(numArray,i,k);
                     i++;
                     k--;
                 }
@@ -73,17 +75,5 @@ public class QuickSort {
         }
 
     
-    public void swap(List<Integer> numList , int first , int second){
-        
-        int temp = numList.get(first);
-        numList.set(first, numList.get(second));
-        numList.set(second, numList.get(first));
-    }
     
-    public void swap(int[] numArray , int first , int second){
-        
-        int temp = numArray[first];
-        numArray[first] = numArray[second];
-        numArray[second] = temp;
-    }
 }
