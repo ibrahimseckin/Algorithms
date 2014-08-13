@@ -12,16 +12,27 @@ namespace Sorting
         {
             List<int> asd = new List<int>();
             Random rd = new Random();
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
-                int a = rd.Next(0, 1000000); 
+                int a = rd.Next(0, 1000000);
                 asd.Add(a);
             }
-                //InsertionSort.insertionSort(asd);
+
             int[] adf = asd.ToArray();
-            InsertionSort.insertionSort(adf);
+            List<string> asds = new List<string>();
+            asds.Add("asdb"); asds.Add("asdc"); asds.Add("sdaa"); asds.Add("safs");
+
+
+
+            //InsertionSort.insertionSort(adf);
+            //InsertionSort.insertionSort(asd);
+            //InsertionSort.insertionSort(asds);
+
+            QuickSort.quickSort(asd);
+            QuickSort.quickSort(asds);
+            QuickSort.quickSort(adf);
         }
-    
+
     }
 
 }
