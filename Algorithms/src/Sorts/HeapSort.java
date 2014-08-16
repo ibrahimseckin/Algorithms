@@ -17,6 +17,7 @@ public class HeapSort {
     private static int length;
     Swap s = new Swap();
     
+    //this function provide that parent should be bigger or equal than its children.
     public void maxHeapify(int [] numArray, int i){
         int left = (2 * i);
         int right = (2 * i) + 1 ;
@@ -38,6 +39,7 @@ public class HeapSort {
             
     }
     
+    //heap is formed by using max-heapify method.
     public void buildMaxHeap(int [] numArray){
         length = numArray.length - 1;
         for(int i = length / 2; i >=0 ; i--){

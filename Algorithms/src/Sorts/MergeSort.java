@@ -15,11 +15,12 @@ import java.util.List;
  */
 public class MergeSort {
         
-        public static List<Integer> mergeSort(List<Integer> numList){
+        //merge operation for list
+        public List<Integer> mergeSort(List<Integer> numList){
             if(numList.size() > 1){
                 int firstHalf = (numList.size() + 1) / 2;
-                //int secondHalf = numList.size() - firstHalf;
                 
+                //divide operation
                 List<Integer> first = new ArrayList<>();
                 for(int i = 0; i < firstHalf; i++)
                     first.add(i, numList.get(i));
@@ -36,6 +37,7 @@ public class MergeSort {
                 int secondPtr = 0;
                 int commonPtr = 0;
                 
+                //merge operation
                 while(firstPtr != first.size() && secondPtr != second.size()){
                     if(first.get(firstPtr) <= second.get(secondPtr)){
                         numList.set(commonPtr, first.get(firstPtr));
@@ -65,11 +67,12 @@ public class MergeSort {
             return numList;
         }
         
-        public static int[] mergeSort(int[] numArray){
+        //merge operation for array.
+        public int[] mergeSort(int[] numArray){
             if(numArray.length > 1){
                 int firstHalf = (numArray.length + 1) / 2;
-                //int secondHalf = numList.size() - firstHalf;
-                
+
+                //divide operation
                 int[] first = new int[firstHalf];
                 for(int i = 0; i < firstHalf; i++)
                     first[i] = numArray[i];
@@ -86,6 +89,7 @@ public class MergeSort {
                 int secondPtr = 0;
                 int commonPtr = 0;
                 
+                //merge operation
                 while(firstPtr != first.length && secondPtr != second.length){
                     if(first[firstPtr] <= second[secondPtr]){
                         numArray[commonPtr] = first[firstPtr];

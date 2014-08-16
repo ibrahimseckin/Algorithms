@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class Swap {
     
+    //swap operation for list.
     public void swap(List<Integer> numList , int first , int second){
         
         int temp = numList.get(first);
@@ -21,6 +22,7 @@ public class Swap {
         numList.set(second, temp);
     }
     
+    //swap operation for array.
     public void swap(int[] numArray , int first , int second){
         
         int temp = numArray[first];
