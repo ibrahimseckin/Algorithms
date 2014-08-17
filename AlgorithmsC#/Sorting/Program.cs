@@ -23,6 +23,11 @@ namespace Sorting
             asds.Add("zasdh"); asds.Add("asdc"); asds.Add("sdaa"); asds.Add("safs");
 
 
+
+            BubbleSort.bubbleSort(asd);
+            BubbleSort.bubbleSort(adf);
+
+
             CountingSort.countingSort(asd);
 
             MergeSort.mergeSort(asd);
